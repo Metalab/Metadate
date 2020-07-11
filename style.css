@@ -1,7 +1,10 @@
+body{
+    background-color:black;
+}
 
 * {
     color:green;
-	background-color: black;
+    box-sizing:border-box;
 }
 
 #frame{
@@ -10,11 +13,13 @@
     text-align: center;
     margin: auto;
     overflow:auto;
+    background-color:pink;
+}
+
+#frame *{
 }
 
 #heading {
-    margin: auto;
-    margin-bottom: 0px;
     margin-top: 50px;
     margin-bottom: 50px;
 	font-size: 100px;
@@ -69,7 +74,7 @@ font-family:Verdana,sans-serif;
 
 .inputFields
 {
-    width: 970px;
+    width: 100%;
     border-radius: 25px;
     background-color:#343536;
     padding:15px;
@@ -99,3 +104,4 @@ font-family:Verdana,sans-serif;
     font-size: 30pt;
     margin-bottom:20px;
 }
+

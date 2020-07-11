@@ -1,0 +1,120 @@
+html,body{
+    height:100%;
+    background-color:black;
+}
+
+* {
+    color:green;
+    box-sizing:border-box;
+}
+
+#frame{
+
+    margin: auto;
+    background-color:black;
+}
+
+
+
+#content  {
+font-family:Verdana,sans-serif;	
+width:90%;
+height:100%;
+margin:auto;
+}
+
+#content *{
+font-family:Verdana,sans-serif;	
+}
+
+
+#seeks{
+    float:left;
+    font-size: 30pt;
+    width: 20%;
+    font-size: 350%;
+}
+
+.whoWhat{
+font-family:Verdana,sans-serif;	
+    font-size: 500%;
+    height: 100%;
+    width: 40%;
+    color:#bec1c4;
+    border:0px;
+    float: left;
+    border-radius: 25px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+.input:focus{
+    border-color:pink;
+    outline:none;
+}
+
+.row{
+    float:left;
+    width:100%;
+}
+
+
+.inputFields
+{
+    width: 90%;
+    height: 75%;
+    margin: auto;
+    border-radius: 25px;
+    background-color:#343536;
+    padding:15px;
+    font-size: 15pt;
+}
+
+
+#head
+{
+    width:90%;
+    margin:auto;
+    text-align: center;
+    height:20%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+#shortdesc{
+    height:50%;
+    width:100%;
+    margin:auto;
+    font-size: 390%;
+    color:#bec1c4;
+    overflow:hidden;
+}
+
+#url{
+    height:25%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+#link{
+    height: 30%;
+    width: 70%;
+    font-size: 300%;
+    float:left;
+    color:#bec1c4;
+}
+#qr{
+   height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    float:left;
+}
+
+#qr:after{
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
