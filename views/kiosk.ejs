@@ -18,6 +18,7 @@
 
 <body>
 
+                <div class="slider"></div>
     <template>
                 <div class="slider">
                 <div id="content">
@@ -38,10 +39,11 @@
     </template>
     <script src="qrcode.js"></script>
     <script>
-        var myObj = {"who":"Website", 
-            "what":"Date",
-            "shortdesc":"Hackerdate website seeks new dateing announce to display on its currently empty kiosk page. To enter you Date follow the link below.", 
-            "url":"https://hackerdate.cool"
+        var nextpage = 0;
+        var myObj = {"who":"", 
+            "what":"",
+            "shortdesc":"", 
+            "url":""
         };
 
         function createDiv(data){
@@ -58,47 +60,29 @@
 
         function getNextDateData()
         {
-            var data = {"who":"Marijuana", 
-                "what":"Buyer",
-                "shortdesc":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores", 
-                "url":"https://hackerdate.cool/date/1"
-            };
-            swapContent(data);
 
-            //var xmlhttp = new XMLHttpRequest();
-            //xmlhttp.onreadystatechange = function() {
-            //  if (this.readyState == 4 && this.status == 200) {
-            //    var data = JSON.parse(this.responseText);
-            //    swapContent(data);
-            //  }
-            //};
-            //xmlhttp.open("GET", "exampledate.html", true);
-            //xmlhttp.send();
+            fetch('/kiosk/' + nextpage)
+              .then(response => response.json())
+              .then(data => swapContent(data));
         }
 
         function swapContent(data) {
-            //var dateContent = {"who":"Hacker", 
-            //    "what":"Hardware",
-            //    "shortdesc":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores", 
-            //    "url":"https://hackerdate.cool/date/1"
-            //};
-            clone = createDiv(data);
+            nextpage = data.nextpage;
+            const clone = createDiv(data);
             document.body.appendChild(clone);
             document.getElementsByClassName("slider")[0].style.right="100%";
             setTimeout(function(){
                 document.getElementsByClassName("slider")[1].style.right="0";
                 var oldElement =document.getElementsByClassName("slider")[0];
                 oldElement.parentNode.removeChild(oldElement);
-                setTimeout(getNextDateData,1000 * 5);
+                setTimeout(getNextDateData,1000 * 20);
 
             },1000);
         }
 
         clone = createDiv(myObj);
 
-        document.body.appendChild(clone);
-        document.getElementsByClassName("slider")[0].style.right="0";
-        setTimeout(getNextDateData,1000 * 5);
+        getNextDateData();
     </script>
 </body>
 </html>
