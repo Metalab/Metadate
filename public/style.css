@@ -1,0 +1,106 @@
+body{
+    background-color:black;
+}
+
+* {
+    color:green;
+    box-sizing:border-box;
+    overflow-wrap:break-word;
+}
+
+#frame{
+    width:1000px;
+
+    text-align: center;
+    margin: auto;
+    overflow:auto;
+}
+
+#frame *{
+}
+
+#heading {
+    margin-top: 50px;
+    margin-bottom: 50px;
+	font-size: 100px;
+	background-color: black;
+    font-family:Helvetica,Arial,sans-serif; 
+    font-variant:small-caps;
+
+}
+
+#content  {
+font-family:Verdana,sans-serif;	
+}
+
+#content *{
+font-family:Verdana,sans-serif;	
+}
+
+
+#seeks{
+    float:left;
+    font-size: 30pt;
+    width: 200px;
+}
+
+.whoWhat{
+font-family:Verdana,sans-serif;	
+    font-size: 30pt;
+    height: 45px;
+    width: 400px;
+    text-align: center;
+    color:#bec1c4;
+    border:0px;
+    background-color:#343536;
+    float: left;
+    border-radius: 25px;
+
+}
+.input:focus{
+    outline:none;
+}
+
+.row{
+    float:left;
+    width:100%;
+}
+
+.fieldDescriptions{
+    float:left;
+    font-size: 15pt;
+}
+
+.inputFields
+{
+    width: 100%;
+    border-radius: 25px;
+    background-color:#343536;
+    padding:15px;
+    color:#bec1c4;
+    font-size: 15pt;
+    float:left;
+}
+
+#shortdesc{
+    height:100px;
+}
+
+#longdesc{
+    height:300px;
+}
+
+#contact{
+    height:300px;
+}
+
+#submitButton{
+    height:40px;
+    width:200px;
+    color:#bec1c4;
+    background-color:#343536;
+    border-radius:25px;
+    font-size: 20pt;
+    margin:20px 0;
+}
+
