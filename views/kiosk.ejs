@@ -46,6 +46,27 @@
             "url":""
         };
 
+
+
+const fetchPlus = (url) =>
+  fetch(url)
+    .then(res => {
+      if (res.ok) {
+        return res
+      }
+      if (true) {
+        return fetchPlus(url)
+      }
+      throw new Error(res.status)
+    })
+    .catch(error => console.error(error.message))
+
+
+
+
+
+
+
         function createDiv(data){
             var template = document.getElementsByTagName("template")[0];
             var clone = template.content.cloneNode(true);
@@ -61,7 +82,7 @@
         function getNextDateData()
         {
 
-            fetch('/kiosk/' + nextpage)
+            fetchPlus('/kiosk/' + nextpage)
               .then(response => response.json())
               .then(data => swapContent(data));
         }
