@@ -30,6 +30,12 @@ body{
 
 }
 
+.head{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+}
+
 #content  {
     font-family:Verdana,sans-serif;	
 }
@@ -43,6 +49,7 @@ body{
     float:left;
     font-size: 30pt;
     width: 200px;
+    text-align:center;
 }
 
 .whoWhat{
@@ -125,5 +132,5 @@ body{
     margin-bottom:20px ;
     text-align:center;
     float:left;
-    text-decoration: none;
+    //text-decoration: none;
 }

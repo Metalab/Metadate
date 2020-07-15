@@ -4,8 +4,8 @@ const bodyParser = require("body-parser");
 const app = express();
 
 const numberOfDates = 20;
-const baseUrl = "http://localhost";
-//const baseUrl = "http://10.20.30.87";
+//const baseUrl = "http://localhost";
+const baseUrl = "http://10.20.30.87";
 
 const defaultPage = {
   who: "Website",
@@ -15,6 +15,7 @@ const defaultPage = {
   longdesc: "empty",
   contact: "empty",
   url: baseUrl,
+  shortUrl: "",
   nextpage: 0,
 };
 
@@ -45,6 +46,7 @@ app.post("/", function (req, res) {
     longdesc: body.longdesc,
     contact: body.contact,
     url: `${baseUrl}/date/${current}`,
+    shortUrl: `/date/${current}`,
   };
 
   res.redirect("date/" + current);

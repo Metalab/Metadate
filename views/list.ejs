@@ -23,22 +23,22 @@
         <div class=row>
             <a class="link" href="/newdate">New Date</a> <a class="link" href="/kiosk">Kiosk</a>
         </div>
-        {{#each dates}}
+        <% dates.forEach(function(item,index){ %>
         <div class=row>
-            <a href="{{this.url}}">
+            <a href="<%= item.shortUrl %>">
                 <span class="inputFields">
                     <span class="listheader">
-                        {{this.who}} seeks {{this.what}}
+                        <%= item.who %> seeks <%= item.what %>
                     </span>
                     <br>
                     <span class="listcontent">
-                        {{this.shortdesc}}
+                        <%= item.shortdesc %>
                     </span>
 
                 </span>
             </a>
         </div>
-        {{/each}
+        <% }) %>
     </div> 
 
   </div>
