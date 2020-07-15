@@ -73,7 +73,7 @@ const fetchPlus = (url) =>
             clone.getElementById("who").innerText=data.who;
             clone.getElementById("what").innerText=data.what;
             clone.getElementById("shortdesc").innerText=data.shortdesc;
-            clone.getElementById("link").href=data.url;
+            clone.getElementById("link").href=data.shortUrl;
             clone.getElementById("link").innerText=data.url;
             qrcode = new QRCode(clone.getElementById("qrcode"), {text:data.url, useSVG:true, correctLevel : QRCode.CorrectLevel.M});
             return clone;

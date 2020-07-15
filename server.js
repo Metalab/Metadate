@@ -15,7 +15,7 @@ const defaultPage = {
   longdesc: "empty",
   contact: "empty",
   url: baseUrl,
-  shortUrl: "",
+  shortUrl: "/newdate",
   nextpage: 0,
 };
 
