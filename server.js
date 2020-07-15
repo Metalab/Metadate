@@ -76,7 +76,7 @@ app.get("/kiosk/:num", function (req, res) {
     body.nextpage = (num + 1) % data.length;
     res.json(body);
   } else {
-    defaultPage;
+    res.json(defaultPage);
   }
 });
 
