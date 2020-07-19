@@ -110,7 +110,6 @@ app.get("/kiosk", function (req, res) {
 app.get("/kiosk/:num", function (req, res) {
   const num = parseInt(req.params.num);
   const body = data[num];
-  console.log(body.shortdesc);
   if (body) {
     body.nextpage = (num + 1) % data.length;
     res.json(body);
