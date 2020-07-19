@@ -100,7 +100,7 @@ font-family:Verdana,sans-serif bold;
 #link{
     height: 30%;
     width: 70%;
-    font-size: 300%;
+    font-size: 4vh;
     float:left;
     color:#bec1c4;
     text-decoration: none;
