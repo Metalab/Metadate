@@ -11,8 +11,7 @@ const port = 5000;
 const defaultPage = {
   who: "Website",
   what: "Date",
-  shortdesc:
-    "Hackerdate website seeks new dating announce to display on its currently empty kiosk page. To enter your date follow the link below.",
+  shortdesc: "Hackerdate website seeks new dating announce to display on its currently empty kiosk page. To enter your date follow the link below.",
   longdesc: "empty",
   contact: "empty",
   url: baseUrl,
@@ -25,19 +24,21 @@ let data = [];
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
-app.get("/", function (req, res) {
+app.get("/", function(req, res) {
   res.render("list", {
     dates: data,
   });
 });
 
-app.get("/newdate", function (req, res) {
+app.get("/newdate", function(req, res) {
   res.render("input");
 });
 
-app.post("/", function (req, res) {
+app.post("/", function(req, res) {
   current = (current + 1) % numberOfDates;
   const body = req.body;
   data[current] = {
@@ -53,7 +54,7 @@ app.post("/", function (req, res) {
   res.redirect("date/" + current);
 });
 
-app.get("/date/:num", function (req, res) {
+app.get("/date/:num", function(req, res) {
   const body = data[req.params.num];
   if (body) {
     res.render("date", {
@@ -68,11 +69,11 @@ app.get("/date/:num", function (req, res) {
   }
 });
 
-app.get("/kiosk", function (req, res) {
+app.get("/kiosk", function(req, res) {
   res.render("kiosk");
 });
 
-app.get("/kiosk/:num", function (req, res) {
+app.get("/kiosk/:num", function(req, res) {
   const num = parseInt(req.params.num);
   const body = data[num];
   if (body) {
@@ -83,6 +84,6 @@ app.get("/kiosk/:num", function (req, res) {
   }
 });
 
-app.listen(port, function () {
+app.listen(port, function() {
   console.log("Metadate listening on port " + port + "!");
 });
