@@ -22,23 +22,23 @@
     <div class="head" id="content">
       <form method="post" id="form" action="/">
         <div class="row">
-          <input type="text" name="who" maxlength=15 class="whoWhat" placeholder="Who">
+          <input type="text" name="who" maxlength=15 value="<%= content.who %>" class="whoWhat" placeholder="Who">
           <div id="seeks">seeks</div>
-          <input type="text" name="what" maxlength=15 class="whoWhat" placeholder="What">
+          <input type="text" name="what" maxlength=15 value="<%= content.what %>" class="whoWhat" placeholder="What">
         </div>
         <div class="row">
           <p class="fieldDescriptions">Please briefly explain what you seek in 200 words or fewer. Please keep it legal!
           </p>
-          <textarea id="shortdesc" class="inputFields" maxlength="200" name="shortdesc" placeholder=""></textarea>
+          <textarea id="shortdesc" class="inputFields"  maxlength="200" name="shortdesc" placeholder=""><%= content.shortdesc %></textarea>
         </div>
         <div class="row">
           <p class="fieldDescriptions">Please thoroughly describe what you seek in as many words as you need. Please
             still keep it legal!</p>
-          <textarea id="longdesc" class="inputFields" name="longdesc" placeholder=""></textarea>
+          <textarea id="longdesc" class="inputFields"   name="longdesc" placeholder=""><%= content.longdesc %></textarea>
         </div>
         <div class="row">
           <p class="fieldDescriptions">Please explain how intrigued people can contact you.</p>
-          <textarea id="contact" class="inputFields" name="contact" placeholder=""></textarea>
+          <textarea id="contact" class="inputFields"  name="contact" placeholder=""><%= content.contact %></textarea>
         </div>
         <div class="row">
           <input id="submitButton" type="submit" value="Submit" />

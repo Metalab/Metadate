@@ -25,19 +25,23 @@ let data = [];
 
 function SanityCheck(input) {
   let errors = [];
-  if (input.who.length < 2 && input.who.length > 15) {
+  if (input.who.length < 2 || input.who.length > 15) {
     errors.push("Please fill out who is looking for something!");
   }
 
-  if (input.what.length < 2 && input.what.length > 15) {
+  if (input.what.length < 2 || input.what.length > 15) {
     errors.push("Please fill out what is beeing looked for!");
   }
 
-  if (input.shortdesc.length < 10 && input.shortdesc.length > 200) {
+  if (input.shortdesc.length < 10 || input.shortdesc.length > 200) {
     errors.push("Please provide a short description of the date!");
   }
 
-  if (input.contact.length < 5 && input.contact.length > 1000) {
+  if (input.longdesc.length > 2000) {
+    errors.push("Please don't write a book!");
+  }
+
+  if (input.contact.length < 5 || input.contact.length > 1000) {
     errors.push("Please enter how someone can contact you!");
   }
   return errors;
@@ -56,6 +60,7 @@ app.get("/", function (req, res) {
 app.get("/newdate", function (req, res) {
   res.render("input", {
     errors: [],
+    content: {},
   });
 });
 
