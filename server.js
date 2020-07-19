@@ -5,7 +5,8 @@ const app = express();
 
 const numberOfDates = 20;
 //const baseUrl = "http://localhost";
-const baseUrl = "http://10.20.30.87";
+const baseUrl = "https://metadate.cool";
+const port = 5000;
 
 const defaultPage = {
   who: "Website",
@@ -82,6 +83,6 @@ app.get("/kiosk/:num", function (req, res) {
   }
 });
 
-app.listen(8088, function () {
-  console.log("Example app listening on port 8088!");
+app.listen(port, function () {
+  console.log("Metadate listening on port " + port + "!");
 });
