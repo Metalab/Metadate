@@ -8,8 +8,8 @@
   <meta charset="utf-8">
 
   <title>Metadate</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+  <meta name="description" content="Metadate">
+  <meta name="author" content="Philipp Hufnagl">
 
   <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -21,6 +21,13 @@
     <h1 id="heading">METADATE</h1>
     <div class="head" id="content">
       <form method="post" id="form" action="/">
+        <% errors.forEach(function(item,index){ %>
+        <div class=row>
+            <div class=error>
+                <%= item %>
+            </div>
+        </div>
+        <% }) %>
         <div class="row">
           <input type="text" name="who" maxlength=15 value="<%= content.who %>" class="whoWhat" placeholder="Who">
           <div id="seeks">seeks</div>
