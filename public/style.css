@@ -61,8 +61,25 @@ body {
   border-radius: 25px;
 }
 
+
 .input:focus {
   outline: none;
+
+.row{
+    float:left;
+    width:100%;
+    margin-bottom: 15px;
+}
+
+.error{
+    font-size: 15pt;
+    border-radius: 25px;
+    background: #ffb270;
+    width:100%;
+    padding:15px;
+    color: black;
+    float:left;
+
 }
 
 .row {
@@ -70,21 +87,25 @@ body {
   width: 100%;
 }
 
+
 .fieldDescriptions {
   float: left;
   font-size: 15pt;
+  }
+  
+.inputFields
+{
+    width: 100%;
+    border-radius: 25px;
+    background-color:#343536;
+    padding:15px;
+    color:#bec1c4;
+    font-size: 15pt;
+    float:left;
+
 }
 
-.inputFields {
-  width: 100%;
-  border-radius: 25px;
-  background-color: #343536;
-  padding: 15px;
-  color: #bec1c4;
-  font-size: 15pt;
-  float: left;
-  margin-bottom: 15px;
-}
+
 
 #shortdesc {
   height: 100px;
