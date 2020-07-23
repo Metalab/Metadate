@@ -65,7 +65,6 @@ app.get("/newdate", function (req, res) {
 });
 
 app.post("/", function (req, res) {
-  current = (current + 1) % numberOfDates;
   const body = req.body;
   const errors = SanityCheck(body);
   if (errors.length > 0) {
@@ -74,6 +73,7 @@ app.post("/", function (req, res) {
       content: body,
     });
   } else {
+    current = (current + 1) % numberOfDates;
     data[current] = {
       who: body.who,
       what: body.what,
