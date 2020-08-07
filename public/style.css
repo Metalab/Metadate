@@ -145,3 +145,43 @@ body{
     float:left;
     //text-decoration: none;
 }
+
+@media screen and (max-width: 1000px) {
+    #frame{
+        width:100%;
+    }
+    .whoWhat{
+        width:100%;
+    }
+    .fieldDescriptions{
+        text-align:center;
+        margin: 2vw 0vw;
+    }
+    
+    .inputFields
+    {
+    }
+    #submitButton{
+        margin:auto;
+        display:block;
+        }
+    #heading {
+    	font-size: 15vw;
+        margin: 5vw 0vw;
+    }
+    #seeks
+    {
+        width:100%;
+    }
+    .error{
+        text-align:center;
+    }
+    .link{
+        width:100%;
+        margin: 1vw 0vw;
+        padding: 1vw 5vw;
+    }
+    .listheader{
+        font-size:8vw;
+    }
+}
