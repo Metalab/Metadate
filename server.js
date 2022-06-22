@@ -80,6 +80,7 @@ app.post("/", function (req, res) {
       shortdesc: body.shortdesc,
       longdesc: body.longdesc,
       contact: body.contact,
+      password: body.password,
       url: `${baseUrl}/date/${current}`,
       shortUrl: `/date/${current}`,
     };
@@ -88,10 +89,40 @@ app.post("/", function (req, res) {
   }
 });
 
+app.post("/date/:num", function (req, res) {
+  if( req.params.num < data.length)
+  {
+    const date = data[req.params.num];
+    if(data[req.params.num].password === req.body.password)
+    {
+      data.splice(req.params.num,1);
+      current -=1;
+      res.redirect("/");
+    }
+    else
+    {
+    let errors = [];
+    errors.push("The password was incorrect!");
+    res.render("date", {
+      errors: errors,
+      who: date.who,
+      what: date.what,
+      shortdesc: date.shortdesc,
+      longdesc: date.longdesc,
+      contact: date.contact,
+    });
+
+    }
+  } else {
+    res.status(404).send("Date does not exist");
+  }
+});
+
 app.get("/date/:num", function (req, res) {
   const body = data[req.params.num];
   if (body) {
     res.render("date", {
+      errors: [],
       who: body.who,
       what: body.what,
       shortdesc: body.shortdesc,
