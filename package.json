@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/Metalab/Metadate#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
+    "body-parser": "^1.20.1",
     "ejs": "^3.1.3",
     "express": "^4.18.1",
     "express-json": "^1.0.0"
